@@ -1,0 +1,211 @@
+.father {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.size-image {
+    width: 90%;
+    height: 780px;
+    margin-top: 20px;
+}
+
+.logotipo {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.textBox {
+    background-color: #cccccc40;
+    border-color: slategray;
+    border-radius: 90px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+}
+
+.textBox:focus {
+    outline: 1px solid cornflowerblue;
+    box-shadow: 0 0 10px cornflowerblue;
+}
+
+.btnform {
+    background-color: #0D6EFD;
+    border-color: slategray;
+    border-radius: 90px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 19px;
+}
+
+.container-button-singOut {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.signOut-button {
+    background-color: #0D6EFD;
+    border-color: slategray;
+    border-radius: 90px;
+    width: 10%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+h5 {
+    color: white;
+    text-align: right;
+}
+
+.text {
+    font-size: 20px;
+    color: slategray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+}
+
+.btnswitch {
+
+    border-radius: 30px;
+    padding: 8px;
+    border-width: 0px;
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+}
+
+body {
+    background: linear-gradient(to right, #2b35a4, #63288a);
+}
+
+.description-container {
+    margin-top: 10px;
+}
+
+.email {
+    margin-top: 15px;
+}
+
+.btn.btn-primary.btn-create {
+    margin-top: 15px;
+}
+
+.dishes-container {
+    background-color: rgb(170, 90, 245);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+
+}
+
+.crud-form .card {
+    border-radius: 8px;
+    background-color: rgb(170, 90, 245);
+}
+
+body {
+    background-image: url('assets/sky.jpeg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4ff;
+}
+
+.answers p {
+    background-color: rgb(198, 124, 247);
+    font-weight: 400;
+}
+
+.title {
+    text-align: center;
+    background: linear-gradient(135deg, #00aaff, #00ffaa);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 160px;
+    background: linear-gradient(135deg, #9900ff, #ff5500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: color-change 5s infinite alternate;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.container-1 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.container-1 h2 {
+    color: #4B0082;
+    /* Indigo */
+    text-align: center;
+    font-weight: bold;
+}
+
+.intro,
+#como-funciona,
+#opiniones {
+    margin-bottom: 20px;
+}
+
+.intro p,
+#como-funciona p,
+#opiniones p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+a {
+    color: #0000FF;
+    /* Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    background-color: #e0e7ff;
+    /* Light blue */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#como-funciona {
+    background-color: #dcdcff;
+    /* Light indigo */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#opiniones {
+    background-color: #e8e0ff;
+    /* Light violet */
+    padding: 20px;
+    border-radius: 10px;
+}
