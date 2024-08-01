@@ -32,6 +32,7 @@ function StudentView() {
           <h2>OPINIONES DE NUESTROS ESTUDIANTES</h2>
           <p>En NetPro valoramos mucho a nuestros estudiantes y sus comentarios.</p>
           <p>Te invitamos a leer algunas reseñas exclusivas y descubrir por ti mismo cómo NetPro puede ayudarte a alcanzar tus objetivos.</p>
+          <p>Añade tu comentario:</p>
         </section>
       </div>
     </div>

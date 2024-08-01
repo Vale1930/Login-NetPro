@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
+
 .father {
     display: flex;
     align-items: center;
@@ -175,7 +177,7 @@ body {
 .intro p,
 #como-funciona p,
 #opiniones p {
-    text-align: center;
+    text-align: left;
     margin: 10px 0;
 }
 
