@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
+import React, { useContext } from 'react'
+import { FormContext } from '../components/FormContext';
 import { saveForm, getForms, onGetForms, deleteForm, getForm, updateForm } from '../credential';
 import { Modal, Button } from 'react-bootstrap';
 import appFirebase from '../credential';
@@ -8,7 +10,7 @@ import { getAuth, signOut } from 'firebase/auth'
 const auth = getAuth(appFirebase);
 
 function CompanyView({ user }) {
-  const [forms, setForms] = useState([]);
+  const { forms } = useContext(FormContext);
   const [editStatus, setEditStatus] = useState(false);
   const [formId, setFormId] = useState('');
   const [formToDelete, setFormToDelete] = useState('');
@@ -21,18 +23,6 @@ function CompanyView({ user }) {
     category: '',
     contact: ''
   });
-
-  useEffect(() => {
-    const unsubscribe = onGetForms((querySnapshot) => {
-      const formsArray = [];
-      querySnapshot.forEach(doc => {
-        formsArray.push({ ...doc.data(), id: doc.id });
-      });
-      setForms(formsArray);
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   const handleDelete = (id) => {
     setFormToDelete(id);

@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FormContext } from '../components/FormContext';
 import appFirebase from '../credential';
 import { getAuth, signOut } from 'firebase/auth'
 
 const auth = getAuth(appFirebase);
 
+
 function StudentView() {
+
+  const { forms } = useContext(FormContext);
+
   return (
     <div>
       <div className='title'>
@@ -34,6 +39,24 @@ function StudentView() {
           <p>Te invitamos a leer algunas reseñas exclusivas y descubrir por ti mismo cómo NetPro puede ayudarte a alcanzar tus objetivos.</p>
           <p>Añade tu comentario:</p>
         </section>
+      </div>
+
+      <div className='vacantes'>
+        <h1>Vacantes disponibles</h1>
+        <div className="row">
+             {forms.map((form) => (
+                <div key={form.id} className="col-md-6">
+                    <div className="dishes-container">
+                        <h3>{form.company}</h3>
+                        <p>Vacante solicitada: {form.name}</p>
+                        <p>Número de participantes: {form.participants}</p>
+                        <p>Descripción: {form.description} </p>
+                        <p>Categoría: {form.category}</p>
+                        <p>Correo de contacto: {form.contact}</p>
+                    </div>
+                </div>
+              ))}
+        </div>
       </div>
     </div>
   )
