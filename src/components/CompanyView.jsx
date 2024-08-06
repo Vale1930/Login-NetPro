@@ -24,6 +24,9 @@ function CompanyView({ user }) {
     contact: ''
   });
 
+  const [error, setError] = useState('');
+
+
   const handleDelete = (id) => {
     setFormToDelete(id);
     setShowModal(true);
@@ -54,6 +57,10 @@ function CompanyView({ user }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (formData.participants < 1) {
+      setError('El número de participantes debe ser mayor o igual a 1.');
+      return;
+    }
     if (!editStatus) {
       saveForm(formData.name, formData.company, formData.participants, formData.description, formData.category, formData.contact);
     } else {
@@ -72,7 +79,18 @@ function CompanyView({ user }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    if (name === "participants") {
+      if (!/^\d*$/.test(value)) {
+        setError('Solo se permiten números.');
+      } else if (parseInt(value) < 1) {
+        setError('El número de participantes debe ser mayor o igual a 1.');
+      } else {
+        setError('');
+        setFormData({ ...formData, [name]: value });
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   return (
@@ -83,8 +101,8 @@ function CompanyView({ user }) {
       <div className='container-button-signOut'>
         <button className='signOut-button' onClick={() => signOut(auth)}>Cerrar sesión</button>
       </div>
-      <h1 style={{ color: "#FFF" }}>
-        Bienvenido, {user}
+      <h1 style={{ color: "#FFF", textAlign: 'center' }}>
+        Bienvenid@, {user}
       </h1>
       <div className='container-1'>
         <section className='intro'>
@@ -102,27 +120,33 @@ function CompanyView({ user }) {
         </section>
 
         <section id='opiniones'>
-          <h2>OPINIONES DE NUESTROS ESTUDIANTES</h2>
-          <p>En NetPro valoramos mucho a nuestros estudiantes y sus comentarios.</p>
-          <p>Te invitamos a leer algunas reseñas exclusivas y descubrir por ti mismo cómo NetPro puede ayudarte a alcanzar tus objetivos.</p>
+          <h2>OPINIONES DE NUESTROS ESTUDIANTES/EMPRESAS</h2>
+          <p>En NetPro valoramos mucho a nuestros usuarios.</p>
+          <p>Te invitamos a leer algunas reseñas exclusivas y descubrir por ti mismo cómo NetPro ayuda a empresas y estudiantes en alcanzar sus objetivos.</p>
+          <p>Añade tu comentario en la página oficial de Instagram @NetProTech</p>
         </section>
       </div>
+
+      <div className='title2'>
+        <h3 >Registra tu proyecto</h3>
+      </div>
+
       <div className="container p-4">
         <div className="row">
           <div className="col-md-6" id="data-container">
             {forms.map((form) => (
               <div key={form.id} className="dishes-container">
                 <h3>{form.company}</h3>
-                <p>Vacante solicitada: {form.name}</p>
-                <p>Número de participantes: {form.participants}</p>
-                <p>Descripción: {form.description} </p>
-                <p>Categoría: {form.category}</p>
-                <p>Correo de contacto: {form.contact}</p>
+                <p><div className='LetrasEnNegritas'><p>Vacante solicitada:</p></div> {form.name}</p>
+                <p><div className='LetrasEnNegritas'><p>Número de participantes:</p></div> {form.participants}</p>
+                <p><div className='LetrasEnNegritas'><p>Descripción:</p></div> {form.description} </p>
+                <p><div className='LetrasEnNegritas'><p>Categoría:</p></div> {form.category}</p>
+                <p><div className='LetrasEnNegritas'><p>Correo de contacto:</p></div> {form.contact}</p>
                 <button
                   className='btn-eliminar btn btn-danger'
                   onClick={() => handleDelete(form.id)}
                 >
-                  ELIMINAR
+                  FINALIZAR
                 </button>
                 <button
                   className='btn-editar btn btn-success'
@@ -197,7 +221,7 @@ function CompanyView({ user }) {
                       onChange={handleChange}
                     >
                       <option value="">Seleccione una opción</option>
-                      <option value="Estudiantes de primeros años">Estudiantes de primeros años</option>
+                      <option value="Estudiantes de primeros años">Estudiantes de primer año</option>
                       <option value="Estudiantes de medio trayecto">Estudiantes de medio trayecto</option>
                       <option value="Estudiantes de último año">Estudiantes de último año</option>
                       <option value="Egresados de menos de 1 año">Egresados de menos de 1 año</option>

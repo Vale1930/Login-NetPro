@@ -13,7 +13,7 @@ function StudentView() {
   return (
     <div>
       <div className='title'>
-        <h1>NetPro</h1>
+        <h1 >NetPro</h1>
       </div>
       <div className='container-button-singOut'>
         <button className='signOut-button' onClick={() => signOut(auth)}>Cerrar sesión</button>
@@ -34,25 +34,25 @@ function StudentView() {
         </section>
 
         <section id='opiniones'>
-          <h2>OPINIONES DE NUESTROS ESTUDIANTES</h2>
-          <p>En NetPro valoramos mucho a nuestros estudiantes y sus comentarios.</p>
-          <p>Te invitamos a leer algunas reseñas exclusivas y descubrir por ti mismo cómo NetPro puede ayudarte a alcanzar tus objetivos.</p>
-          <p>Añade tu comentario:</p>
+        <h2>OPINIONES DE NUESTROS ESTUDIANTES/EMPRESAS</h2>
+          <p>En NetPro valoramos mucho a nuestros usuarios.</p>
+          <p>Te invitamos a leer algunas reseñas exclusivas y descubrir por ti mismo cómo NetPro ayuda a empresas y estudiantes en alcanzar sus objetivos.</p>
+          <p>Añade tu comentario en la página oficial de Instagram @NetProTech</p>
         </section>
       </div>
 
       <div className='vacantes'>
-        <h1>Vacantes disponibles</h1>
+        <div className='title2'><h3>Vacantes disponibles</h3></div>
         <div className="row">
              {forms.map((form) => (
                 <div key={form.id} className="col-md-6">
                     <div className="dishes-container">
                         <h3>{form.company}</h3>
-                        <p>Vacante solicitada: {form.name}</p>
-                        <p>Número de participantes: {form.participants}</p>
-                        <p>Descripción: {form.description} </p>
-                        <p>Categoría: {form.category}</p>
-                        <p>Correo de contacto: {form.contact}</p>
+                        <p><div className='LetrasEnNegritas'><p>Vacante solicitada:</p></div> {form.name}</p>
+                        <p><div className='LetrasEnNegritas'><p>Número de participantes:</p></div> {form.participants}</p>
+                        <p><div className='LetrasEnNegritas'><p>Descripción:</p></div> {form.description} </p>
+                        <p><div className='LetrasEnNegritas'><p>Categoría:</p></div> {form.category}</p>
+                        <p><div className='LetrasEnNegritas'><p>Correo de contacto:</p></div> {form.contact}</p>
                     </div>
                 </div>
               ))}
